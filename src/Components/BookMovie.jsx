@@ -29,25 +29,25 @@ const BookMovie = () => {
                             <label className="label">
                                 <span className="label-text">Movie Name</span>
                             </label>
-                            <input type="text" defaultValue={movie.name} placeholder="movie name" name="movie" className="input input-bordered" />
+                            <input type="text" defaultValue={movie?.name} placeholder="movie name" name="movie" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <input type="text" placeholder="user name" name="user" className="input input-bordered" defaultValue={bookStoreInfo && bookStoreInfo.user } />
+                            <input type="text" placeholder="user name" name="user" className="input input-bordered" defaultValue={bookStoreInfo && bookStoreInfo?.user } />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Language</span>
                             </label>
-                            <input type="text" defaultValue={movie.language} placeholder="language" name="language" className="input input-bordered" />
+                            <input type="text" defaultValue={movie?.language} placeholder="language" name="language" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Quantity</span>
                             </label>
-                            <input type="number" placeholder="quantity" name="quantity" className="input input-bordered" defaultValue={bookStoreInfo && bookStoreInfo.quantity }/>
+                            <input type="number" placeholder="quantity" name="quantity" className="input input-bordered" defaultValue={bookStoreInfo && bookStoreInfo?.quantity }/>
                         </div>
                         <div className="form-control mt-6">
                             <input type="submit" className="btn btn-primary bg-[#eb2f06] hover:bg-[#e55039] border-0 text-white" value="Book Now" />
