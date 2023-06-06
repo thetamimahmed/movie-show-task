@@ -1,13 +1,26 @@
 
 const Movie = ({ show }) => {
+    const { id, name, language, status, premiered, ended, averageRuntime, genres, rating, image } = show
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img src={show.image.medium} alt="Movie" /></figure>
+        <div className="card lg:card-side bg-base-100 shadow-xl">
+            <figure><img className="w-full h-full" src={image.medium} alt="Movie" /></figure>
             <div className="card-body">
-                <h2 className="card-title text-red-700">New movie is released!</h2>
-                <p>Click the button to watch on Jetflix app.</p>
+                <h2 className="card-title text-3xl text-[#eb2f06]">{name}</h2>
+                <div className="flex justify-between">
+                    <p>Language: {language}</p>
+                    <p>Status: {status}</p>
+                </div>
+                <div className="flex justify-between">
+                    <p>Rating: {rating.average ? rating.average : 'N/A'}</p>
+                    <p>Average Runtime: {averageRuntime}</p>
+                </div>
+                <div className="space-y-2">
+                    <p>Premiered: {premiered}</p>
+                    <p>Ended: {ended ? ended : 'N/A'}</p>
+                    <p>Genres: {genres.map((genre, i) => <span className="mr-4" key={i}>{genre},</span>)}</p>
+                </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
+                    <button className="btn btn-primary bg-[#eb2f06] hover:bg-[#e55039] border-0 text-white">Details</button>
                 </div>
             </div>
         </div>
