@@ -6,11 +6,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Main from './Layout/Main';
+import Home from './Components/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>,
+        loader: () => fetch('https://api.tvmaze.com/search/shows?q=all')
+      }
+    ]
   },
 ]);
 
